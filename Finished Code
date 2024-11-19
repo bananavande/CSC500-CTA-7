@@ -1,0 +1,77 @@
+#To accomplish the required tasks, I'm going to create a nested dictionary.
+
+classes = {
+    'PHYS 224': {
+        'Location': 'PAB A118',
+        'Instructor': 'Sherman',
+        'Meeting time': '8:00 am'
+    },
+    'PHYS 225': {
+        'Location': 'PAB A114',
+        'Instructor': 'Torres',
+        'Meeting time': '9:30 am'
+    },
+    'PHYS 321': {
+        'Location': 'PAB A102',
+        'Instructor': 'Vaughn',
+        'Meeting time': '9:00 am'
+    },
+    'PHYS 324': {
+        'Location': 'PAB A102',
+        'Instructor': 'Garrett',
+        'Meeting time': '10:00 am'
+    },
+    'ASTR 322': {
+        'Location': 'PAB A118',
+        'Instructor': 'Rivers',
+        'Meeting time': '1:30 pm'
+    },
+}
+
+course = input('Enter course here: ').strip()
+if course in classes:
+    room = classes[course]['Location']
+    teacher = classes[course]['Instructor']
+    time = classes[course]['Meeting time']
+    print('Course: {}'.format(course))
+    print('Room: {}'.format(room))
+    print('Instructor: {}'.format(teacher))
+    print('Meeting time: {}'.format(time))
+else:
+    print('Invalid course number.')
+
+
+#Since the nested dictionary differs from the requirements slightly, here's an alternative version with three seperate deictionaries.
+course_rooms = {
+    'PHYS 224': 'PAB A118',
+    'PHYS 225': 'PAB A114',
+    'PHYS 321': 'PAB A102',
+    'PHYS 324': 'PAB A102',
+    'ASTR 322': 'PAB A118'
+}
+
+course_instructors = {
+    'PHYS 224': 'Sherman',
+    'PHYS 225': 'Torres',
+    'PHYS 321': 'Vaughn',
+    'PHYS 324': 'Garrett',
+    'ASTR 322': 'Rivers'
+}
+
+course_times = {
+    'PHYS 224': '8:00 am',
+    'PHYS 225': '9:30 am',
+    'PHYS 321': '9:00 am',
+    'PHYS 324': '10:00 am',
+    'ASTR 322': '1:30 pm'
+    }
+
+course = input('Enter course number: ').strip()
+
+if course in course_rooms:
+    print(f'Course: {course}')
+    print(f'Room: {course_rooms[course]}')
+    print(f'Instructor: {course_instructors[course]}')
+    print(f'Meeting Time: {course_times[course]}')
+else:
+    print('Invalid course number.')
